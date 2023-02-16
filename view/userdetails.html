@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performing RestAPI</title>
+</head>
+<body>
+    <h1>Performing RESTAPIs</h1>
+    <form onsubmit="addDetails(event)">
+        <label for="name">Enter Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Enter Email:</label>
+        <input type="email" name="email" id="email">
+        <button>Submit</button>
+    </form>
+    <ul id="users"></ul>
+    <script src="userdetails.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.3/axios.min.js"></script>
+</body>
+</html>
