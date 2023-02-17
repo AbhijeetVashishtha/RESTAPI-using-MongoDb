@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', async (event) => {
     try{
         const users = document.getElementById('users');
-        const response = await axios.get('http://localhost:3000/user/getuser');
+        const response = await axios.get('http://13.232.161.154:3000/user/getuser');
         // console.log(response.data.data);
         if(response.status === 200)
         {
@@ -29,7 +29,7 @@ async function addDetails(event){
         };
         
         console.log(userDetails);
-        const response = await axios.post('http://localhost:3000/user/postuser', userDetails);
+        const response = await axios.post('http://13.232.161.154:3000/user/postuser', userDetails);
         // console.log(response);
         if(response.status === 200){
             showUserOnScreen(response.data.data);
@@ -48,7 +48,7 @@ async function addDetails(event){
 
 async function deleteUser(userId) {
     try{
-        const response = await axios.delete(`http://localhost:3000/user/deleteuser/${userId}`);
+        const response = await axios.delete(`http://13.232.161.154:3000/user/deleteuser/${userId}`);
         // console.log(response);
         if(response.status === 200)
         {
