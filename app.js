@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const app = express();
 const userRoutes = require('./routes/restapi');
 
@@ -10,9 +12,9 @@ app.use(cors());
 app.use('/user', userRoutes);
 
 
-mongoose.connect('mongodb+srv://abhi:abhi12345@cluster0.ejgxefl.mongodb.net/userDetails?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URL)
 .then(() => {
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
     console.log('Connected!');
 })
 .catch((err) => {
